@@ -35,7 +35,7 @@ dependencies{
     compileOnly "com.github.Anuken.Arc:arc-core:$mindustryVersion"
     compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
 
-    annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
+    annotationProcessor "com.github.GlennFolker.EntityAnno:downgrader:v146.0.2"
 }
 
 //force arc version
@@ -74,7 +74,10 @@ jar{
     from{
         configurations.runtimeClasspath.collect{ it.isDirectory() ? it : zipTree(it) }
     }
+    /*
 
+    papa's mindustria
+    
     from(rootDir){
         include "mod.hjson"
     }
@@ -82,6 +85,7 @@ jar{
     from("assets/"){
         include "**"
     }
+    */
 }
 
 task deploy(type: Jar){
